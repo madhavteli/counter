@@ -1,28 +1,30 @@
-import React, {useState} from 'react';
+import React, { useState } from 'react';
 import Btn from "./Components/Btn";
 
 function App() {
 
-	const [count, setCount] =useState(0);
+	const [count, setCount] = useState( 0 );
 
 	const increaseCount = () => {
-		setCount(count+1);
+		setCount( count + 1 );
 	}
 
 	const decreaseCount = () => {
-		setCount(count <= 0 ? count : count-1);
+		setCount( count <= 0 ? count : count - 1 );
 	}
 
 	const resetCount = () => {
-		setCount(0);
+		setCount( 0 );
 	}
 
 	return (
-		<div>
-			<Btn btnText='+' onClick={increaseCount}/>
-			<h1>{count}</h1>
-			<Btn btnText='-' onClick={decreaseCount}/>
-			<Btn btnText='Reset' onClick={resetCount}/>
+		<div style={{textAlign: "center"}}>
+			<Btn btnText="+" onClick={increaseCount} />
+			<span className='count'>{count}</span>
+			<Btn btnText="-" onClick={decreaseCount} />
+			<div>
+				<Btn btnText="Reset" onClick={resetCount} />
+			</div>
 		</div>
 	);
 }
